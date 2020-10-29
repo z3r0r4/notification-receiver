@@ -17,6 +17,18 @@
 #     #conn.send(data)
 # conn.close()
 
+
+#TODO send reply answer json to android
+#TODO maybe switch to c++ or c# for server cus windows  
+#TODO store notifications
+#TODO dissmiss notifications
+#TODO answer notifications
+
+#Integrated with windows
+#TODO frontend: display active Notifications
+#TODO frontend: add reply Box
+
+
 import socketserver
 
 class Handler_TCPServer(socketserver.BaseRequestHandler):
