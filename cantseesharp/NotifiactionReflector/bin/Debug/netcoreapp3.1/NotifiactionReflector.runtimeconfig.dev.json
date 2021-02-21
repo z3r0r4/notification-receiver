@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Hackel\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Hackel\\.nuget\\packages"
+    ]
+  }
+}

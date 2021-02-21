@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MMWmknCI9xcElFQMPBoX/MOfTEjvFlOvJkgXV7F6A+6FOIPriMYl4uhZe3u3CeOt+gT0qg5v7v7mRdrxsyzXqQ==",
+  "success": true,
+  "projectFilePath": "D:\\Hackel\\WorkSpace\\Talent\\Science\\IT\\Development\\notification-mirror-server\\cantseesharp\\NotifiactionReflector\\NotifiactionReflector.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hackel\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

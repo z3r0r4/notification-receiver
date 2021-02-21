@@ -1,0 +1,15 @@
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\NotifiactionReflector.exe
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\NotifiactionReflector.deps.json
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\NotifiactionReflector.runtimeconfig.json
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\NotifiactionReflector.runtimeconfig.dev.json
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\NotifiactionReflector.dll
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\NotifiactionReflector.pdb
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.csprojAssemblyReference.cache
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.AssemblyInfoInputs.cache
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.AssemblyInfo.cs
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.csproj.CoreCompileInputs.cache
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.dll
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.pdb
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.genruntimeconfig.cache
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.csproj.CopyComplete

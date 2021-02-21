@@ -23,6 +23,7 @@ class MirrorNotification:
     def notify(self):
         print("New Notification:")
         console.log(self.JsonNotification)
+        
 
     def __str__(self):
         return str(self.__dict__)
@@ -44,13 +45,13 @@ class MirrorNotification:
 import socket
 
 TCP_IP = '192.168.178.84'
-TCP_PORT = 9001
+TCP_PORT = 9003
 BUFFER_SIZE = 1024
 reply = b'Test'
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((TCP_IP, TCP_PORT))
-s.settimeout(10)
+s.settimeout(30)
 s.listen(3) #allow 3 connections (client threads)
 # conn, addr = s.accept()
 
@@ -69,7 +70,7 @@ while 1:
 
         print('\a') # winsound.Beep(frequency, duration)
         print("received data:\n", data)
-        # print("extracted:\n", mn)
+        print("extracted:\n", mn)
         mn.notify()
 
         if data == b'':
