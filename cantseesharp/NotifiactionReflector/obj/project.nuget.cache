@@ -1,10 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "MMWmknCI9xcElFQMPBoX/MOfTEjvFlOvJkgXV7F6A+6FOIPriMYl4uhZe3u3CeOt+gT0qg5v7v7mRdrxsyzXqQ==",
+  "dgSpecHash": "cQWNe1LmBSgiBKrJXEOhc/eJRzWg1flJNponiNHO+oi8wVj5Wi8GzIBhjYZMiAbksW8IhMskGtYDHLqgIBIC/g==",
   "success": true,
   "projectFilePath": "D:\\Hackel\\WorkSpace\\Talent\\Science\\IT\\Development\\notification-mirror-server\\cantseesharp\\NotifiactionReflector\\NotifiactionReflector.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Hackel\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\Hackel\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\microsoft.toolkit.uwp.notifications\\6.1.1\\microsoft.toolkit.uwp.notifications.6.1.1.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.17763.1000\\microsoft.windows.sdk.contracts.10.0.17763.1000.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\system.runtime.windowsruntime\\4.6.0\\system.runtime.windowsruntime.4.6.0.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\system.runtime.windowsruntime.ui.xaml\\4.6.0\\system.runtime.windowsruntime.ui.xaml.4.6.0.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
