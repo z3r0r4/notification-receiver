@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RWa5wtsbOk7Ws/F1FlblMKldQ2bw3UKKYPLAIOWXvYvdxROeh2eKLdwsJZ74yLFUb+vbZdhLiey2KBvzyywjmQ==",
+  "dgSpecHash": "Y1pXwbjF6BokcybIkpn8ctg69YDEi88sLPRIU5yn/JZRuk+wUVxDpxgzUaG2rEUxO59TsTowNQK7ehPXWFU+ww==",
   "success": true,
   "projectFilePath": "D:\\Hackel\\WorkSpace\\Talent\\Science\\IT\\Development\\notification-mirror-server\\cantseesharp\\NotifiactionReflector\\NotifiactionReflector.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Hackel\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Hackel\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.17763.1000\\microsoft.windows.sdk.contracts.10.0.17763.1000.nupkg.sha512",
     "C:\\Users\\Hackel\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Hackel\\.nuget\\packages\\querystring.net\\1.0.0\\querystring.net.1.0.0.nupkg.sha512",
     "C:\\Users\\Hackel\\.nuget\\packages\\system.runtime.windowsruntime\\4.6.0\\system.runtime.windowsruntime.4.6.0.nupkg.sha512",
     "C:\\Users\\Hackel\\.nuget\\packages\\system.runtime.windowsruntime.ui.xaml\\4.6.0\\system.runtime.windowsruntime.ui.xaml.4.6.0.nupkg.sha512",
     "C:\\Users\\Hackel\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
@@ -19,6 +20,16 @@
     "C:\\Users\\Hackel\\.nuget\\packages\\windowsapicodepack-shellextensions\\1.1.1\\windowsapicodepack-shellextensions.1.1.1.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'QueryString.NET 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "QueryString.NET",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

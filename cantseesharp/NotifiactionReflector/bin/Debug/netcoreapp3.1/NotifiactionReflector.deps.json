@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.Toolkit.Uwp.Notifications": "6.1.1",
           "Newtonsoft.Json": "12.0.3",
+          "QueryString.NET": "1.0.0",
           "WindowsAPICodePack-Core": "1.1.2",
           "WindowsAPICodePack-Shell": "1.1.1",
           "WindowsAPICodePack-ShellExtensions": "1.1.1"
@@ -49,6 +50,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -143,6 +152,13 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "QueryString.NET/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5iVQSmK0X6iTMQWKbegV92lfAcCjJXFduL6CKVReJDzdWmH6k10aztDRXE9cWU4YW1tXsCOfkwqRCG/8Tod9aA==",
+      "path": "querystring.net/1.0.0",
+      "hashPath": "querystring.net.1.0.0.nupkg.sha512"
     },
     "System.Runtime.WindowsRuntime/4.6.0": {
       "type": "package",

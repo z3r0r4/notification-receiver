@@ -154,6 +154,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "QueryString.NET/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
       "System.Runtime.WindowsRuntime/4.6.0": {
         "type": "package",
         "dependencies": {
@@ -571,6 +580,23 @@
         "packageIcon.png"
       ]
     },
+    "QueryString.NET/1.0.0": {
+      "sha512": "5iVQSmK0X6iTMQWKbegV92lfAcCjJXFduL6CKVReJDzdWmH6k10aztDRXE9cWU4YW1tXsCOfkwqRCG/8Tod9aA==",
+      "type": "package",
+      "path": "querystring.net/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/dotnet/QueryString.NETCore.XML",
+        "lib/dotnet/QueryString.NETCore.dll",
+        "lib/dotnet/QueryString.NETCore.pdb",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.dll",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.pdb",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.xml",
+        "querystring.net.1.0.0.nupkg.sha512",
+        "querystring.net.nuspec"
+      ]
+    },
     "System.Runtime.WindowsRuntime/4.6.0": {
       "sha512": "IWrs1TmbxP65ZZjIglNyvDkFNoV5q2Pofg5WO7I8RKQOpLdFprQSh3xesOoClBqR4JHr4nEB1Xk1MqLPW1jPuQ==",
       "type": "package",
@@ -899,6 +925,7 @@
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.Toolkit.Uwp.Notifications >= 6.1.1",
       "Newtonsoft.Json >= 12.0.3",
+      "QueryString.NET >= 1.0.0",
       "WindowsAPICodePack-Core >= 1.1.2",
       "WindowsAPICodePack-Shell >= 1.1.1",
       "WindowsAPICodePack-ShellExtensions >= 1.1.1"
@@ -947,6 +974,10 @@
             "target": "Package",
             "version": "[12.0.3, )"
           },
+          "QueryString.NET": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "WindowsAPICodePack-Core": {
             "target": "Package",
             "version": "[1.1.2, )"
@@ -980,6 +1011,16 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'QueryString.NET 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "QueryString.NET",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

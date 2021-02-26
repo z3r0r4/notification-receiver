@@ -17,3 +17,4 @@ D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\can
 D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Microsoft.WindowsAPICodePack.dll
 D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Microsoft.WindowsAPICodePack.Shell.dll
 D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\QueryString.NETCore.dll

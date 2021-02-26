@@ -1,6 +1,7 @@
 dotnet add package  WindowsAPICodePack-Core
- dotnet add package WindowsAPICodePack-Shell
- dotnet add package WindowsAPICodePack-ShellExtensions
+dotnet add package WindowsAPICodePack-Shell
+dotnet add package WindowsAPICodePack-ShellExtensions
+dotnet add package Microsoft.Toolkit.Uwp.Notifications
 
 copy
 Program.cs
