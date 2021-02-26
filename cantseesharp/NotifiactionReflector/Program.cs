@@ -25,9 +25,26 @@ namespace NotifiactionReflector
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-           NewToastNotification Window = new NewToastNotification("Yes",1);
+            //TODO http://blog.plasticscm.com/2016/08/how-to-send-windows-toast-notifications.html this describes how to send notifications from console apps
+             // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
+            DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivator>("r4.notification-reflector");
+            // Register COM server and activator type
+            DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
+
+            // Construct the visuals of the toast (using Notifications library)
+            ToastContent toastContent = new ToastContentBuilder()
+            .AddToastActivationInfo("action=viewConversation&conversationId=5", ToastActivationType.Foreground)
+            .AddText("Hello world!")
+            .GetToastContent();
+
+            // And create the toast notification
+            var toast = new ToastNotification(toastContent.GetXml());
+
+            // And then show it
+            DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 
             Console.WriteLine("created Toast");
 
@@ -95,6 +112,7 @@ namespace NotifiactionReflector
             XmlDocument tileXml = new XmlDocument();
             tileXml.LoadXml(Toast);
             var toast = new ToastNotification(tileXml);
+            
             ToastNotificationManager.CreateToastNotifier("New Toast Thing").Show(toast);
         }
 }
