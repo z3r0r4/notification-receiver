@@ -14,3 +14,6 @@ D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\can
 D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\obj\Debug\netcoreapp3.1\NotifiactionReflector.csproj.CopyComplete
 D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Microsoft.Toolkit.Uwp.Notifications.dll
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Microsoft.WindowsAPICodePack.dll
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Hackel\WorkSpace\Talent\Science\IT\Development\notification-mirror-server\cantseesharp\NotifiactionReflector\bin\Debug\netcoreapp3.1\Microsoft.WindowsAPICodePack.ShellExtensions.dll

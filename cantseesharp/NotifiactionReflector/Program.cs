@@ -1,119 +1,178 @@
 ﻿using System;
-using System.Net.Sockets;
-
-using Microsoft.Toolkit.Uwp.Notifications;
-using Windows.UI.Notifications;
-/*
-At first you need to declare that your program will be using winRT libraries:
-1. Right click on your yourProject, select Unload Project
-2. Right click on your youProject(unavailable) and click Edit yourProject.csproj
-3. Add a new property group:<TargetPlatformVersion>8.0</TargetPlatformVersion>
-4. Reload project
-5. Add referece Windows from Windows > Core
-*/
-using System;
+using System.IO;
+using System.Diagnostics;
 using Windows.Data.Xml.Dom;
-using Windows.Storage;
-using Windows.Storage.Streams;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Notifications;
 
-namespace NotifiactionReflector
+using MS.WindowsAPICodePack.Internal;
+using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
+
+namespace ConsoleToast
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
-            //TODO http://blog.plasticscm.com/2016/08/how-to-send-windows-toast-notifications.html this describes how to send notifications from console apps
-             // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
-            DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivator>("r4.notification-reflector");
-            // Register COM server and activator type
-            DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
+            ShortCutCreator.TryCreateShortcut("ConsoleToast.App", "ConsoleToast");
 
-            // Construct the visuals of the toast (using Notifications library)
-            ToastContent toastContent = new ToastContentBuilder()
-            .AddToastActivationInfo("action=viewConversation&conversationId=5", ToastActivationType.Foreground)
-            .AddText("Hello world!")
-            .GetToastContent();
+            Console.WriteLine("Type 'exit' to quit. ENTER to show a notification");
 
-            // And create the toast notification
-            var toast = new ToastNotification(toastContent.GetXml());
-
-            // And then show it
-            DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
-
-            Console.WriteLine("created Toast");
-
-
-
-            // receive();
+            while (Console.ReadLine() != "exit")
+            {
+                ShowImageToast(
+                    "ConsoleToast.App",
+                    DateTime.Now.ToLongTimeString() + " title with image",
+                    "this is a message",
+                    Path.GetFullPath("plasticlogo.png"));
+                /*ShowTextToast(
+                    "ConsoleToast.App",
+                    DateTime.Now.ToLongTimeString() + "title",
+                    "this is a message");*/
+            }
         }
 
-        private static void receive()
+        static void ShowTextToast(string appId, string title, string message)
         {
-            TcpListener server = new TcpListener(System.Net.IPAddress.Parse("192.168.178.84"), 9003);
-            server.Start();
+            XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(
+                ToastTemplateType.ToastText02);
 
-            while (true)
+            // Fill in the text elements
+            XmlNodeList stringElements = toastXml.GetElementsByTagName("text");
+            stringElements[0].AppendChild(toastXml.CreateTextNode(title));
+            stringElements[1].AppendChild(toastXml.CreateTextNode(message));
+
+            // Create the toast and attach event listeners
+            ToastNotification toast = new ToastNotification(toastXml);
+
+            ToastEvents events = new ToastEvents();
+
+            toast.Activated += events.ToastActivated;
+            toast.Dismissed += events.ToastDismissed;
+            toast.Failed += events.ToastFailed;
+
+            // Show the toast. Be sure to specify the AppUserModelId
+            // on your application's shortcut!
+            ToastNotificationManager.CreateToastNotifier(appId).Show(toast);
+        }
+
+        static void ShowImageToast(string appId, string title, string message, string image)
+        {
+            XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(
+                ToastTemplateType.ToastImageAndText02);
+
+            // Fill in the text elements
+            XmlNodeList stringElements = toastXml.GetElementsByTagName("text");
+            stringElements[0].AppendChild(toastXml.CreateTextNode(title));
+            stringElements[1].AppendChild(toastXml.CreateTextNode(message));
+
+            // Specify the absolute path to an image
+            String imagePath = "file:///" + image;
+            XmlNodeList imageElements = toastXml.GetElementsByTagName("image");
+            imageElements[0].Attributes.GetNamedItem("src").NodeValue = imagePath;
+
+            // Create the toast and attach event listeners
+            ToastNotification toast = new ToastNotification(toastXml);
+
+            ToastEvents events = new ToastEvents();
+
+            toast.Activated += events.ToastActivated;
+            toast.Dismissed += events.ToastDismissed;
+            toast.Failed += events.ToastFailed;
+
+            // Show the toast. Be sure to specify the AppUserModelId
+            // on your application's shortcut!
+            ToastNotificationManager.CreateToastNotifier(appId).Show(toast);
+        }
+
+        class ToastEvents
+        {
+            internal void ToastActivated(ToastNotification sender, object e)
             {
-                Console.WriteLine("Waiting");
-                TcpClient client = server.AcceptTcpClient();
+                Console.WriteLine("User activated the toast");
+            }
 
-                NetworkStream ns = client.GetStream();
-
-                while (client.Connected)//not needed?
+            internal void ToastDismissed(ToastNotification sender, ToastDismissedEventArgs e)
+            {
+                String outputText = "";
+                switch (e.Reason)
                 {
-                    byte[] msg = new byte[1024];
-                    ns.Read(msg, 0, msg.Length);
-                    String jsonMessage = System.Text.Encoding.Default.GetString(msg);
-
-                    Console.Write(jsonMessage);
-                    try
-                    {
-                        MirrorNotification mn = new MirrorNotification(jsonMessage);
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("didnt extract");
+                    case ToastDismissalReason.ApplicationHidden:
+                        outputText = "The app hid the toast using ToastNotifier.Hide";
                         break;
-                    }
+                    case ToastDismissalReason.UserCanceled:
+                        outputText = "The user dismissed the toast";
+                        break;
+                    case ToastDismissalReason.TimedOut:
+                        outputText = "The toast has timed out";
+                        break;
                 }
+
+                Console.WriteLine(outputText);
+            }
+
+            internal void ToastFailed(ToastNotification sender, ToastFailedEventArgs e)
+            {
+                Console.WriteLine("The toast encountered an error.");
+            }
+        }
+
+        static class ShortCutCreator
+        {
+            // In order to display toasts, a desktop application must have
+            // a shortcut on the Start menu.
+            // Also, an AppUserModelID must be set on that shortcut.
+            // The shortcut should be created as part of the installer.
+            // The following code shows how to create
+            // a shortcut and assign an AppUserModelID using Windows APIs.
+            // You must download and include the Windows API Code Pack
+            // for Microsoft .NET Framework for this code to function
+
+            internal static bool TryCreateShortcut(string appId, string appName)
+            {
+                String shortcutPath = Environment.GetFolderPath(
+                    Environment.SpecialFolder.ApplicationData) +
+                    "\\Microsoft\\Windows\\Start Menu\\Programs\\" + appName + ".lnk";
+                if (!File.Exists(shortcutPath))
+                {
+                    InstallShortcut(appId, shortcutPath);
+                    return true;
+                }
+                return false;
+            }
+
+            static void InstallShortcut(string appId, string shortcutPath)
+            {
+                // Find the path to the current executable
+                String exePath = Process.GetCurrentProcess().MainModule.FileName;
+                IShellLinkW newShortcut = (IShellLinkW)new CShellLink();
+
+                // Create a shortcut to the exe
+                VerifySucceeded(newShortcut.SetPath(exePath));
+                VerifySucceeded(newShortcut.SetArguments(""));
+
+                // Open the shortcut property store, set the AppUserModelId property
+                IPropertyStore newShortcutProperties = (IPropertyStore)newShortcut;
+
+                using (PropVariant applicationId = new PropVariant(appId))
+                {
+                    VerifySucceeded(newShortcutProperties.SetValue(
+                        SystemProperties.System.AppUserModel.ID, applicationId));
+                    VerifySucceeded(newShortcutProperties.Commit());
+                }
+
+                // Commit the shortcut to disk
+                IPersistFile newShortcutSave = (IPersistFile)newShortcut;
+
+                VerifySucceeded(newShortcutSave.Save(shortcutPath, true));
+            }
+
+            static void VerifySucceeded(UInt32 hresult)
+            {
+                if (hresult <= 1)
+                    return;
+
+                throw new Exception("Failed with HRESULT: " + hresult.ToString("X"));
             }
         }
     }
-     public class NewToastNotification
-    {
-        public NewToastNotification(string input, int type)
-        {
-            string NotificationTextThing = input;
-            string Toast = "";
-            switch (type)
-            {
-                case 1:
-                    {
-                        //Basic Toast
-                        Toast = "<toast><visual><binding template=\"ToastImageAndText01\"><text id = \"1\" >";
-                        Toast += NotificationTextThing;
-                        Toast += "</text></binding></visual></toast>";
-                        break;
-                    }
-                default:
-                    {
-                        Toast = "<toast><visual><binding template=\"ToastImageAndText01\"><text id = \"1\" >";
-                        Toast += "Default Text String";
-                        Toast += "</text></binding></visual></toast>";
-                        break;
-                    }
-            }
-            XmlDocument tileXml = new XmlDocument();
-            tileXml.LoadXml(Toast);
-            var toast = new ToastNotification(tileXml);
-            
-            ToastNotificationManager.CreateToastNotifier("New Toast Thing").Show(toast);
-        }
-}
 }

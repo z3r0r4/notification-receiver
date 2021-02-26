@@ -1,15 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+dotnet add package  WindowsAPICodePack-Core
+ dotnet add package WindowsAPICodePack-Shell
+ dotnet add package WindowsAPICodePack-ShellExtensions
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <TargetPlatformVersion>8.0</TargetPlatformVersion>
-    <ProjectGuid>{58f20c1d-2100-47d9-8ee6-a2024345df44}</ProjectGuid>
-  </PropertyGroup>
+copy
+Program.cs
+ShellHelper.cs
+from https://github.com/psantosl/ConsoleToast
 
+add 
+<PropertyGroup>
+...
+<TargetPlatformVersion>10.0.10586</TargetPlatformVersion>
+...
+<PropertyGroup>
 
 <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <Reference Include="System" />
     <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.InteropServices.WindowsRuntime" />
@@ -24,4 +29,8 @@
     <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
     <PackageReference Include="WindowsAPICodePack-ShellExtensions" Version="1.1.1" />
   </ItemGroup>
-</Project>
+  to *.csproj
+
+  dotnet run
+
+  source: http://blog.plasticscm.com/2016/08/how-to-send-windows-toast-notifications.html
